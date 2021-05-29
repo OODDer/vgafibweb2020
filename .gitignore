@@ -151,10 +151,10 @@ crashlytics-build.properties
 fabric.properties
 
 #Database Data
-/pg
+*/pg
 
 #Entorno
 .env
 
 #Cosas de Django
-/migrations
+*/migrations

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-column" >
+<form method="post" enctype="multipart/form-data" class="container-column centered">
+    {% csrf_token %}
+    {{ student_form }}
+    <div class="container-row centered">
+    <button type="submit" class="btn btn-success" style="">Confirm</button>
+    </div>
+</form>
+
+</div>
+{% endblock %}

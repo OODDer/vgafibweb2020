@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+<div style="position:center;display:flex; justify-content:space-around;">
+    <div class="shadow"  style="min-height:300px;width:60%;">
+        <img style="min-height:300px" width="100%" src="{% static '.'%}{{curso.cartel}}"><br>
+    <br><h2 >{{curso.info.nom}}</h2><br><br>
+    {{ curso.info.descripcio }}
+        </div>
+    <a href="{%url 'inscripcion' curso_id=curso.id %}"><button class="btn btn-primary"  style="margin:5px">
+					Inscribirse
+				</button></a>
+
+</div>
+{% endblock %}

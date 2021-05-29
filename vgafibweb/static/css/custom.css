@@ -1,0 +1,19 @@
+.container-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.centered{
+    align-self: center;
+    margin: auto;
+}
+
+.grid{
+    display: grid;
+}
+

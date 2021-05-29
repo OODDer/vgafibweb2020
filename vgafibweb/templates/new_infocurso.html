@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-column" >
+<form method="post" class="container-column centered">
+    {% csrf_token %}
+    {{ new_infocurso_form }}
+    <br>
+    <div class="container-row centered">
+        <button type="submit" class="btn btn-success">Confirm</button><button type="submit" class="btn btn-danger">Exit</button>
+    </div>
+</form>
+
+</div>
+{% endblock %}

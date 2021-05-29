@@ -152,10 +152,10 @@ fabric.properties
 
 #Database Data
 */pg
+/vgafibweb/pg/
 
 #Entorno
 .env
 
 #Cosas de Django
 */migrations
-/vgafibweb/pg/

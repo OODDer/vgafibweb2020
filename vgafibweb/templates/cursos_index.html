@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display:flex; justify-content:space-around; flex-wrap:wrap; padding:5px">
+{% for curso in cursos %}
+
+    <div style="background-color:#B5C6E3;width:30%;min-width:350px;margin:5px" class="shadow" ><br><b><p style="margin-left:20px">{{ curso.info.nom }}</p></b>
+    {% load static %}
+    <img style="margin:2.5%" width="95%" src="{% static '.'%}{{curso.cartel}}"><br>
+        <br><p style="margin-left:20px">{{ curso.info.descripcio }}</p><br>
+        <a style="margin-left:20px;" href="{% url 'show_curso' curso_id=curso.id %}"><button class="btn btn-info" >Más Información</button></a>
+    <br><br>
+    </div>
+
+{% endfor %}
+</div>
+{% endblock %}

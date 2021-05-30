@@ -1,8 +1,15 @@
 version: "3"
 services:
+  app:
+    build: ./vgafibweb
+    container_name: "vgaweb"
+    ports:
+      - "80:8822"
+    depends_on: 
+      - "pg"
   pg:
     image: "postgres:12"
-    container_name: "postgres"
+    container_name: "vgaweb_db"
     environment:
       - "POSTGRES_PASSWORD=somepassword"
       - "POSTGRES_USER=root"

@@ -159,3 +159,4 @@ fabric.properties
 
 #Cosas de Django
 */migrations
+/pg/

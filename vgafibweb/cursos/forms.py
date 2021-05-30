@@ -12,6 +12,10 @@ PAYMETHODS = [
     ("Paypal", "Paypal"),
     ("Transferencia", "Transferencia")
 ]
+BCHOICES = [ #Esto funciona para un bool, no uso booleanfield porque parece que el required=false no le funciona
+    ("NO", "NO"),
+    ("YES", "YES")
+]
 
 class CursoForm(forms.Form):
     cartel = forms.ImageField()
@@ -33,6 +37,6 @@ class StudentForm(forms.Form):
     nombre = forms.CharField(label="Nombre" )
     apellidos = forms.CharField(label="Apellidos")
     email = forms.EmailField(label="Dirección de Correo Electrónico")
-    companero = forms.CharField(label="Nombre del Compañero",required=False)
+    companero = forms.CharField(label="Nombre del Compañero", required=False)
     paymethod = forms.ChoiceField(choices=PAYMETHODS,label="Método de Pago")
-    is_fiber = forms.BooleanField(label="Eres Estudiante en la FIB")
+    is_fiber = forms.ChoiceField(choices=BCHOICES, label="Eres Estudiante en la FIB")

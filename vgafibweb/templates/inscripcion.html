@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container-column" >
+<div class="container-column centered" style="min-width: 45%;box-shadow: 0 0 3px #ccc;background:lightgrey;">
 <form method="post" enctype="multipart/form-data" class="container-column centered">
+    <h1>{{ curso.info.nom }}</h1>
     {% csrf_token %}
-    {{ student_form }}
+    {{ student_form.nombre | as_crispy_field }}
+    {{ student_form.apellidos | as_crispy_field }}
+    {{ student_form.dni | as_crispy_field }}
+    {{ student_form.email | as_crispy_field }}
+    {{ student_form.companero | as_crispy_field }}
+    {{ student_form.paymethod | as_crispy_field }}
+    {{ student_form.is_fiber | as_crispy_field }}
     <div class="container-row centered">
     <button type="submit" class="btn btn-success" style="">Confirm</button>
     </div>
 </form>
+</div>
 
 </div>
 {% endblock %}

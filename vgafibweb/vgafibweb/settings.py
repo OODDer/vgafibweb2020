@@ -42,11 +42,15 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 DBNAME = env("DBNAME")
 DBUSER = env('DBUSER')
 DBPASSWORD = env('DBPASSWORD')
-# Application definition
 
+#paquete para los forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Application definition
 INSTALLED_APPS = [
     'cursos.apps.CursosConfig',
     'homeweb.apps.HomewebConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

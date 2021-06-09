@@ -73,7 +73,7 @@ def inscripcion(request, curso_id):
         if form.is_valid():
             newStudent = models.StudentEnrolled()
             newStudent.cursoEnrolled = curso
-            newStudent.is_fiber = form.cleaned_data['is_fiber']
+            newStudent.is_fiber = form.cleaned_data['is_fiber'] == "YES"
             newStudent.dni = form.cleaned_data['dni']
             newStudent.nombre = form.cleaned_data['nombre']
             newStudent.apellidos = form.cleaned_data['apellidos']

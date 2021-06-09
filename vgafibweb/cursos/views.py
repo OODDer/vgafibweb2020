@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from cursos import forms
+from django.contrib.admin.views.decorators import staff_member_required
 from . import models
 from .models import InfoCurso, Curso
 from django.shortcuts import redirect
@@ -37,7 +38,7 @@ def new_curso(request):
 
     return redirect('cursos_index')
 
-
+@staff_member_required()
 def new_infocurso(request):
     if request.method == "GET":
         new_infocurso_form = forms.InfoCursoForm()

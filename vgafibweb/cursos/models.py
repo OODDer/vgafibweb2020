@@ -18,6 +18,7 @@ class Curso(models.Model):
     fecha_fin = models.DateField()
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
+    aula = models.CharField(max_length=200)
     cartel = models.ImageField(upload_to='carteles/')
 
 

@@ -2,15 +2,33 @@
 
 {% block content %}
     {% load static %}
-<div style="position:center;display:flex; justify-content:space-around;">
-    <div class="shadow"  style="min-height:300px;width:60%;">
-        <img style="min-height:300px" width="100%" src="{% static '.'%}{{curso.cartel}}"><br>
+<div style="position:center;display:flex; justify-content:space-around;flex-wrap: wrap;">
+    <div class="shadow d-md-block d-none"  style="min-height:300px;width:60%;background:white;">
+        <img style="min-height:300px;max-height:600px" width="100%" src="{% static '.'%}{{curso.cartel}}"><br>
     <br><h2 >{{curso.info.nom}}</h2><br><br>
     {{ curso.info.descripcio }}
         </div>
-    <a href="{%url 'inscripcion' curso_id=curso.id %}"><button class="btn btn-primary"  style="margin:5px">
+    <div class="shadow d-sm-block d-md-none"  style="min-height:300px;min-width:60%;background:white;">
+        <img style="min-height:300px;max-height:600px" width="100%" src="{% static '.'%}{{curso.cartel}}"><br>
+    <br><h2 >{{curso.info.nom}}</h2>
+    {{ curso.info.descripcio }}
+        </div>
+    <div style="display: flex; flex-direction:column;justify-content:space-around;align-items:center; width:20%" >
+    <div style="box-shadow: 0 0 3px #ccc;background:white;width:100%">
+        <p style="margin: 5px"><b>Horario: </b>{{ curso.hora_inicio }} - {{ curso.hora_fin }}</p>
+        <p style="margin: 5px"><b>Aula: </b>{{ curso.aula }}</p>
+        <p style="margin: 5px"><b>Fechas:</b> {{ curso.fecha_inicio }} hasta {{ curso.fecha_fin }}</p>
+    </div>
+        <div style="box-shadow: 0 0 0 3px #ccc;margin-top:20px;background:white;width:100%">
+    <h3 style="margin:10px">Contáctanos</h3>
+    <p style="margin:10px"><label>email:</label> formacio@vgafib.org</p>
+
+        </div>
+    <a href="{%url 'inscripcion' curso_id=curso.id %}"><button class="btn btn-info"  style="margin:5px">
 					Inscribirse
 				</button></a>
+        </div>
 
 </div>
+
 {% endblock %}

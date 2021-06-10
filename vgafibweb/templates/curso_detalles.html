@@ -13,21 +13,41 @@
     <br><h2 >{{curso.info.nom}}</h2>
     {{ curso.info.descripcio }}
         </div>
+
+
+
+
     <div style="display: flex; flex-direction:column;justify-content:space-around;align-items:center; width:20%" >
-    <div style="box-shadow: 0 0 3px #ccc;background:white;width:100%">
-        <p style="margin: 5px"><b>Horario: </b>{{ curso.hora_inicio }} - {{ curso.hora_fin }}</p>
-        <p style="margin: 5px"><b>Aula: </b>{{ curso.aula }}</p>
-        <p style="margin: 5px"><b>Fechas:</b> {{ curso.fecha_inicio }} hasta {{ curso.fecha_fin }}</p>
-    </div>
+        <div style="box-shadow: 0 0 3px #ccc;background:white;width:100%">
+            <h3 style="margin:10px">Información</h3>
+
+            <p style="margin: 5px">
+                <i class="far fa-clock"></i>
+                <b> Horario: </b>{{ curso.hora_inicio }} - {{ curso.hora_fin }}
+            </p>
+            <p style="margin: 5px">
+                <i class="fas fa-door-open"></i>
+                <b>Aula: </b>{{ curso.aula }}
+            </p>
+            <p style="margin: 5px">
+                <i class="far fa-calendar-alt"></i>
+                <b>Fechas:</b> {{ curso.fecha_inicio }} hasta {{ curso.fecha_fin }}
+            </p>
+        </div>
         <div style="box-shadow: 0 0 0 3px #ccc;margin-top:20px;background:white;width:100%">
-    <h3 style="margin:10px">Contáctanos</h3>
-    <p style="margin:10px"><label>email:</label> formacio@vgafib.org</p>
+            <h3 style="margin:10px">Contáctanos</h3>
+            <p style="margin:10px">
+                <i class="far fa-envelope"></i>
+                <label>email:</label> formacio@vgafib.org
+            </p>
 
         </div>
-    <a href="{%url 'inscripcion' curso_id=curso.id %}"><button class="btn btn-info"  style="margin:5px">
-					Inscribirse
-				</button></a>
-        </div>
+        <a href="{%url 'inscripcion' curso_id=curso.id %}">
+            <button class="btn btn-info"  style="margin:5px">
+                Inscribirse
+            </button>
+        </a>
+    </div>
 
 </div>
 

@@ -6,8 +6,13 @@
     {% csrf_token %}
     {{ new_infocurso_form }}
     <br>
-    <div class="container-row centered">
-        <button type="submit" class="btn btn-success">Confirm</button><button type="submit" class="btn btn-danger">Exit</button>
+    <div class="container-row centered botones">
+        <button type="submit" class="btn btn-success">Confirm</button>
+        
+        
+        <a class="btn btn-danger" href="{% url 'cursos_index' %}">
+            Exit
+        </a>
     </div>
 </form>
 

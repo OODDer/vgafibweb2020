@@ -28,6 +28,50 @@ nav #score {
     min-width:350px !important;
 
     background-color: #B4F9FF !important;
+
+
+    border-radius: 0% !important;
+    border-width: 15px !important;
+    border-color: grey !important;
 }
 
 
+
+
+
+h1, h2, h3, h4, h5 {
+    font-family: 'overpass' !important;
+    
+}
+
+.card-text, .descripcionCurso {
+    font-family: 'Raleway' !important;
+    font-weight: 400;
+}
+
+
+
+.tituloCurso, .descripcionCurso {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+
+
+#informacion {
+    padding: 10px;
+}
+
+#informacion h3, #informacion p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+.botones {
+    display: flex !important;
+    justify-content: space-around;
+    width: 100%;
+}

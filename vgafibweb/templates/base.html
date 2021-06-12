@@ -54,16 +54,19 @@
 	<main>
 
 		<div style="display:flex; justify-content:space-around;">
-		<canvas class="d-none d-xl-block" id = "leftc" style="width:10%;"></canvas>
+		<canvas class="d-none d-xl-block" id = "leftc" style="width:10%;height:100%;"></canvas>
 		<div style="min-width:80%;background:lightgrey;">
 			<br><br><br><br>
 			{% block content %}
             {% endblock %}
 			</div>
-		<canvas class="d-none d-xl-block" id = "rightc"></canvas>
+		<canvas class="d-none d-xl-block" id = "rightc" style="width:10%;height:100%;"></canvas>
 			</div>
 		<div style="display:none;">
   			<img id="target" src= "{% static 'images/target.png' %}">
+			<img id="targetb" src= "{% static 'images/targetb.png' %}">
+			<img id="targety" src= "{% static 'images/targetyy.png' %}">
+			<img id="targetp" src= "{% static 'images/targetp.png' %}">
 		</div>
 	</main>
 

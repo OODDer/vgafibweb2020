@@ -20,6 +20,8 @@ def index(request):
     }
     return render(request, "cursos_index.html", context=context)
 
+
+@staff_member_required()
 def new_curso(request):
     if request.method == "GET":
         new_curso_form = forms.CursoForm()

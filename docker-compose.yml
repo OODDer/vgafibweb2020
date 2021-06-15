@@ -5,6 +5,9 @@ services:
     container_name: "vgaweb"
     ports:
       - "80:8822"
+    volumes:
+      - ./vgafibweb/static/carteles:/static/carteles
+      - ./vgafibweb/cursos/migrations:/cursos/migrations
     depends_on: 
       - "pg"
   pg:

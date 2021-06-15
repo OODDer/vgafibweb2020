@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
 
 
+
 </head>
 
 
@@ -54,13 +55,13 @@
 	<main>
 
 		<div style="display:flex; justify-content:space-around;">
-		<canvas class="d-none d-xl-block" id = "leftc" style="width:10%;height:100%;"></canvas>
+		<canvas class="d-none d-xl-block" id = "leftc" ></canvas>
 		<div style="min-width:80%;background:lightgrey;">
 			<br><br><br><br>
 			{% block content %}
             {% endblock %}
 			</div>
-		<canvas class="d-none d-xl-block" id = "rightc" style="width:10%;height:100%;"></canvas>
+		<canvas class="d-none d-xl-block" id = "rightc" ></canvas>
 			</div>
 		<div style="display:none;">
   			<img id="target" src= "{% static 'images/target.png' %}">
@@ -71,7 +72,7 @@
 	</main>
 
 <!--	Aqui el codigo del canvas con el jueguito, quiza se podria mover a un archivo a parte-->
-<script src="{% static 'js/juegoPaginaWeb.js' %}"></script>
+<script src="{% static 'js/juegoPaginaWeb_1.js' %}"></script>
 <!--  Aqui unas librerias de javascript para que la navbar funcione con las cosas chulas de bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

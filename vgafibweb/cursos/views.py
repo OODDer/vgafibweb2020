@@ -10,8 +10,13 @@ from django.core.files.storage import FileSystemStorage
 
 
 def index(request):
+    cursos = Curso.objects.all()
+
+    for c in cursos:
+        c.info.descripcio = c.info.descripcio[0:200]+"..."
+
     context = {
-        'cursos': Curso.objects.all()
+        'cursos': cursos
     }
     return render(request, "cursos_index.html", context=context)
 

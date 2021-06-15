@@ -3,9 +3,9 @@ var ctx = c.getContext("2d");
 var h = ctx.canvas.height;//document.body.scrollHeight - 5;
 var hi = window.innerHeight - 5;
 if (hi > h) h= hi;
-var w = ctx.canvas.width;//window.innerWidth/10;
-//ctx.canvas.height = h;
-//ctx.canvas.width = w;
+var w = window.innerWidth/10;
+ctx.canvas.height = h;
+ctx.canvas.width = w;
 for (i = 0; i<=w;i+=w/5){
     ctx.beginPath();
     var off = 0;
@@ -23,7 +23,7 @@ for (i = 0; i<h;i+=w/5){
 var r = document.getElementById("rightc");
 var rtx = r.getContext("2d");
 rtx.canvas.height = h;
-//rtx.canvas.width = ctx.canvas.width;
+rtx.canvas.width = ctx.canvas.width;
 for (i = 0; i<=w;i+=w/5){
     rtx.beginPath();
     rtx.moveTo(i-off, 0);

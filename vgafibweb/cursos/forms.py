@@ -33,7 +33,7 @@ class InfoCursoForm(forms.Form):
     descripcio = forms.CharField(widget=TextInput)
 
 class StudentForm(forms.Form):
-    dni = forms.IntegerField(label="DNI")
+    dni = forms.IntegerField(label="DNI sin la letra")
     nombre = forms.CharField(label="Nombre" )
     apellidos = forms.CharField(label="Apellidos")
     email = forms.EmailField(label="Dirección de Correo Electrónico")

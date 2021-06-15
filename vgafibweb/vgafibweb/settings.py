@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import environ
 from dotenv import load_dotenv
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 load_dotenv()
 env = environ.Env()

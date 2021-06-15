@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["172.29.0.9","192.168.0.28","localhost","vgafib.org"]
+ALLOWED_HOSTS = ["172.29.0.9","192.168.0.28","localhost","vgafib.org","www.vgafib.org"]
 
 
 EMAIL_HOST = env("EMAIL_HOST")

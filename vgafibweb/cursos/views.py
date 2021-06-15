@@ -22,6 +22,39 @@ def index(request):
 
 
 @staff_member_required()
+def edit_curso(request, curso_id):
+    if request.method == "GET":
+        curso = models.Curso.objects.get(id=curso_id)
+        curso_form = forms.CursoForm(initial={
+            'id':curso.id,
+            'info_id':curso.info.id,
+            'fecha_inicio':curso.fecha_inicio,
+            'fecha_fin': curso.fecha_fin,
+            'hora_inicio': curso.hora_inicio,
+            'hora_fin': curso.hora_fin,
+            'cartel': curso.cartel
+        })
+        context = {
+            'new_curso_form': curso_form
+
+        }
+        return render(request, "new_curso.html", context=context)
+    elif request.method == "POST":
+        form = forms.CursoForm(request.POST, request.FILES)
+        if form.is_valid():
+            newCurso = models.Curso()
+            newCurso.id = form.cleaned_data['id']
+            newCurso.info = InfoCurso.objects.get(id=form.cleaned_data['info_id'])
+            newCurso.fecha_inicio = form.cleaned_data['fecha_inicio']
+            newCurso.fecha_fin = form.cleaned_data['fecha_fin']
+            newCurso.cartel = form.cleaned_data['cartel']
+            newCurso.hora_fin = form.cleaned_data['hora_fin']
+            newCurso.hora_inicio = form.cleaned_data['hora_inicio']
+            newCurso.save()
+
+    return redirect('cursos_index')
+
+@staff_member_required()
 def new_curso(request):
     if request.method == "GET":
         new_curso_form = forms.CursoForm()

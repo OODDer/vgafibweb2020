@@ -20,9 +20,8 @@
 
 
 
-
-    <div style="display: flex; flex-direction:column;justify-content:space-around;align-items:center; width:20%" >
-        <div id="informacion" style="box-shadow: 0 0 3px #ccc;background:white;width:100%">
+    <div class="d-md-block d-none" style="display: flex; flex-direction:column;justify-content:space-around;align-items:center; width:20%;height:100%" >
+        <div class="informacion" style="box-shadow: 0 0 3px #ccc;background:white;width:100%">
             <h3>Información</h3>
 
             <div class="d-flex">
@@ -49,12 +48,86 @@
 
 
             <div class="d-flex">
-                <div class="d-inline w-50">
+                <div class="d-inline ">
                     <i class="far fa-calendar-alt"></i>
                     <b>Fechas:</b>
                 </div>
-                <div>
+                <div class="w-50">
                     {{ curso.fecha_inicio }} hasta {{ curso.fecha_fin }}
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="d-inline">
+                    <i class="fas fa-euro-sign"></i>
+                    <b>Precio:</b>
+                </div>
+                <div class="w-75">
+                    125€<br>95€ si te inscribes con un compañero
+                </div>
+            </div>
+        </div>
+
+
+        <div style="box-shadow: 0 0 0 3px #ccc;margin-top:20px;background:white;width:100%">
+            <h3 style="margin:10px;display:inline-block">Contáctanos</h3>
+            <p style="margin:10px">
+                <i class="far fa-envelope"></i>
+                <b>email:</b> formacio@vgafib.org
+            </p>
+
+        </div>
+        <div class="d-flex align-content-center" style="justify-content:space-around">
+        <a href="{%url 'inscripcion' curso_id=curso.id %}">
+            <button class="btn btn-info"  style="margin:5px">
+                Inscribirse
+            </button>
+        </a>
+        </div>
+    </div>
+
+    <div class="shadow d-sm-block d-md-none" style="display: flex; flex-direction:column;justify-content:space-around;align-items:center; min-width:20%;max-width:90%;" >
+        <div class="informacion" style="box-shadow: 0 0 3px #ccc;background:white;width:100%;margin-top:20px;">
+            <h3>Información</h3>
+
+            <div class="d-flex">
+                <div class="d-inline mr-1">
+                    <i class="far fa-clock"></i>
+                    <b>Horario: </b>
+                </div>
+                <div>
+                    {{ curso.hora_inicio }} - {{ curso.hora_fin }}
+                </div>
+            </div>
+
+
+            <div class="d-flex">
+                <div class="d-inline">
+                    <i class="fas fa-door-open"></i>
+                    <b>Aula: </b>
+                </div>
+                <div>
+                    {{ curso.aula }}
+                </div>
+            </div>
+
+
+
+            <div class="d-flex">
+                <div class="d-inline">
+                    <i class="far fa-calendar-alt"></i>
+                    <b>Fechas:</b>
+                </div>
+                <div class="w-50">
+                    {{ curso.fecha_inicio }} hasta {{ curso.fecha_fin }}
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="d-inline">
+                    <i class="fas fa-euro-sign"></i>
+                    <b>Precio:</b>
+                </div>
+                <div class="w-75">
+                    125€<br>95€ si te inscribes con un compañero
                 </div>
             </div>
         </div>
@@ -68,12 +141,14 @@
             </p>
 
         </div>
+        <div class="d-flex align-content-center" style="justify-content:space-around">
         <a href="{%url 'inscripcion' curso_id=curso.id %}">
             <button class="btn btn-info"  style="margin:5px">
                 Inscribirse
             </button>
-        </a>
+        </a></div>
     </div>
+
 
 </div>
 

@@ -63,11 +63,11 @@ h1, h2, h3, h4, h5 {
 
 
 
-#informacion {
+.informacion {
     padding: 10px;
 }
 
-#informacion h3, #informacion p {
+.informacion h3, .informacion p {
     margin-top: 5px;
     margin-bottom: 5px;
 }

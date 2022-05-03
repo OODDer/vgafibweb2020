@@ -5,12 +5,13 @@ from . import models
 from .models import InfoCurso, Curso
 from django.shortcuts import redirect
 from django.core.mail import send_mail
+import datetime
 from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
 
 def index(request):
-    cursos = Curso.objects.all()
+    cursos = Curso.objects.filter(fecha_inicio__gt=datetime.date.today())
 
     for c in cursos:
         c.info.descripcio = c.info.descripcio[0:200]+"..."

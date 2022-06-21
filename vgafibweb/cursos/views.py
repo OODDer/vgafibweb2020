@@ -11,7 +11,7 @@ from django.core.files.storage import FileSystemStorage
 
 
 def index(request):
-    cursos = Curso.objects.filter(fecha_inicio__gt=datetime.date.today())
+    cursos = Curso.objects.filter(fecha_fin__gt=datetime.date.today())
 
     for c in cursos:
         c.info.descripcio = c.info.descripcio[0:200]+"..."
@@ -152,6 +152,21 @@ Atentamente,
 
 Oriol Duran
 Presidente VGAFIB"""
+            student_count = models.StudentEnrolled.objects.filter(cursoEnrolled__id=curso_id).count()
+            if(student_count>25):
+                mes = """Hola,
+
+Hemos recibido tu solicitud de inscripción al curso. 
+
+Por desgracia ahora mismo todas las plazas disponibles están reservadas.
+
+Te pondremos en una lista de espera y se te avisará por correo electrónico si se libera alguna plaza.
+
+Atentamente,
+
+Oriol Duran
+Presidente VGAFIB"""
+
             send_mail("Pago de la matrícula para \'"+curso.info.nom+"\'",message=mes,from_email=None, recipient_list=[newStudent.email])
 
             newStudent.save()
